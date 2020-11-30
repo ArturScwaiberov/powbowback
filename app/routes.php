@@ -28,7 +28,7 @@ function sendVerificationEmail()
     $mail->Username="purchases@evamall.altkg.com";
     $mail->Password='$Q7pi64n';
 
-    $mail->addAddress("kotov.den@gmail.com","User Name");
+    $mail->addAddress("3.13.13@mail.ru","User Name");
     $mail->Subject="Verify Your Email Address For StackOverFlow";
     $mail->isHTML();
     $mail->Body=" Welcome to StackOverFlow.<b><b> Please verify your email adress to continue..";
