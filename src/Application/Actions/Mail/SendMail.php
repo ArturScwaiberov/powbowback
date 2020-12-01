@@ -76,7 +76,12 @@ class SendMail extends Action
         $mail->addAddress("kotov.den@gmail.com","User Name");
         $mail->Subject="Совершена покупка";
         $mail->isHTML();
-        $body = "<p>". json_encode($products) ."</p>";
+
+        $body = "<h1>Продукты</h1>";
+        foreach ($products as $product) {
+            $body .= "<p>". $product ."</p>";
+        }
+        $body = "<hr>";
         $body .= "<p>$totalAmount</p>";
         $body .= "<p>$phone</p>";
         $body .= "<p>$adress</p>";
