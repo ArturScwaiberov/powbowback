@@ -41,7 +41,7 @@ class SendMail extends Action
         $adress = $data['adress'];
         $payMethod = $data['payMethod'];
         $token = $data['token'];
-        if ($token === 'powpowtoken') {
+        if ($token === 'Рowpowtoken') {
             $this->sendVerificationEmail($products, $totalAmount, $phone, $adress, $payMethod);
         }
         $payload = json_encode($data);
@@ -73,22 +73,26 @@ class SendMail extends Action
         $mail->Password='$Q7pi64n';
         $mail->CharSet = 'utf-8';
 
-        $mail->addAddress("kotov.den@gmail.com","User Name");
-        $mail->Subject="Совершена покупка";
+        $mail->addAddress("3.13.13@mail.ru");
+        $mail->addAddress("artlabteam.com@gmail.com");
+        $mail->Subject="Поступил новый заказ";
         $mail->isHTML();
 
-        $body = "<h1>Продукты</h1>";
+        $body = "<h1>Пользователь совершил заказ, пожалуйста свяжитесь с ним.</h1>";
+        $body .= "<h1>Список товаров:</h1>";
         foreach ($products as $product) {
-            $body .= "<p>". $product ."</p>";
+            $body .= $product ."<br>";
         }
         $body .= "<hr>";
-        $body .= "<p>$totalAmount</p>";
-        $body .= "<p>$phone</p>";
-        $body .= "<p>$adress</p>";
-        $body .= "<p>$payMethod</p>";
+        $body .= "<p><b>Сумма заказа: </b>$totalAmount</p>";
+        $body .= "<p><b>Номер клиента: </b>$phone</p>";
+        $body .= "<p><b>Адрес доставки: </b>$adress</p>";
+        $body .= "<p><b>Способ оплаты: </b>$payMethod</p>";
+        $body .= "<br><hr><br>";
+        $body .= "<h2>EvaMall</h2>";
         $mail->Body=$body;
         $mail->From="purchases@evamall.altkg.com";
-        $mail->FromName="Social Evamall";
+        $mail->FromName="EvaMall";
 
         if($mail->send())
         {
