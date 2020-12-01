@@ -73,7 +73,7 @@ class SendMail extends Action
         $mail->Password='$Q7pi64n';
         $mail->CharSet = 'utf-8';
 
-        $mail->addAddress("3.13.13@mail.ru","User Name");
+        $mail->addAddress("kotov.den@gmail.com","User Name");
         $mail->Subject="Совершена покупка";
         $mail->isHTML();
 
