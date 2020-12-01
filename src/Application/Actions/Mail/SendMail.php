@@ -73,7 +73,7 @@ class SendMail extends Action
         $mail->Password='$Q7pi64n';
         $mail->CharSet = 'utf-8';
 
-        $mail->addAddress("kotov.den@gmail.com","User Name");
+        $mail->addAddress("3.13.13@mail.ru","User Name");
         $mail->Subject="Совершена покупка";
         $mail->isHTML();
 
@@ -81,7 +81,7 @@ class SendMail extends Action
         foreach ($products as $product) {
             $body .= "<p>". $product ."</p>";
         }
-        $body = "<hr>";
+        $body .= "<hr>";
         $body .= "<p>$totalAmount</p>";
         $body .= "<p>$phone</p>";
         $body .= "<p>$adress</p>";
