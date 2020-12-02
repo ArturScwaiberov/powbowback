@@ -78,8 +78,8 @@ class SendMail extends Action
         $mail->Subject="Поступил новый заказ";
         $mail->isHTML();
 
-        $body = "<h1>Пользователь совершил заказ, пожалуйста свяжитесь с ним.</h1>";
-        $body .= "<h1>Список товаров:</h1>";
+        $body = "<p>Внимание! Поступил новый заказ, пожалуйста свяжитесь с клиентом.</p>";
+        $body .= "<h3>Список товаров:</h3>";
         foreach ($products as $product) {
             $body .= $product ."<br>";
         }
