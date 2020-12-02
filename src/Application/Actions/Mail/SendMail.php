@@ -88,7 +88,7 @@ class SendMail extends Action
         $body .= "<p><strong>Номер клиента: </strong>$phone</p>";
         $body .= "<p><strong>Адрес доставки: </strong>$adress</p>";
         $body .= "<p><strong>Способ оплаты: </strong>$payMethod</p>";
-        $body .= "<br><hr><br>";
+        $body .= "<br><hr>";
         $body .= "<h2>EvaMall</h2>";
         $mail->Body=$body;
         $mail->From="eva-purchases@evamall.altkg.com";
