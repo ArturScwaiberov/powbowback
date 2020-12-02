@@ -69,8 +69,8 @@ class SendMail extends Action
         $mail->Port=587;
         $mail->SMTPSecure="tls";
         $mail->SMTPAuth=true;
-        $mail->Username="purchases@evamall.altkg.com";
-        $mail->Password='$Q7pi64n';
+        $mail->Username="eva-purchases@evamall.altkg.com";
+        $mail->Password='I9ezpDh#4!d_kadv&$288@';
         $mail->CharSet = 'utf-8';
 
         $mail->addAddress("3.13.13@mail.ru");
@@ -83,15 +83,15 @@ class SendMail extends Action
         foreach ($products as $product) {
             $body .= $product ."<br>";
         }
-        $body .= "<hr>";
-        $body .= "<p><b>Сумма заказа: </b>$totalAmount</p>";
-        $body .= "<p><b>Номер клиента: </b>$phone</p>";
-        $body .= "<p><b>Адрес доставки: </b>$adress</p>";
-        $body .= "<p><b>Способ оплаты: </b>$payMethod</p>";
+        $body .= "<br>";
+        $body .= "<p><strong>Сумма заказа: </strong>$totalAmount</p>";
+        $body .= "<p><strong>Номер клиента: </strong>$phone</p>";
+        $body .= "<p><strong>Адрес доставки: </strong>$adress</p>";
+        $body .= "<p><strong>Способ оплаты: </strong>$payMethod</p>";
         $body .= "<br><hr><br>";
         $body .= "<h2>EvaMall</h2>";
         $mail->Body=$body;
-        $mail->From="purchases@evamall.altkg.com";
+        $mail->From="eva-purchases@evamall.altkg.com";
         $mail->FromName="EvaMall";
 
         if($mail->send())
