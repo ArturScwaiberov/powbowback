@@ -55,7 +55,7 @@ class SendFeedbackMail extends Action
     }
 
     //Function to send mail, 
-    protected function sendVerificationEmail( $phone, $message,)
+    protected function sendVerificationEmail( $phone, $message)
     {      
         $mail = new PHPMailer;
 
