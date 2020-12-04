@@ -4,6 +4,7 @@ declare(strict_types=1);
 use App\Application\Actions\User\ListUsersAction;
 use App\Application\Actions\User\ViewUserAction;
 use App\Application\Actions\Mail\SendMail;
+use App\Application\Actions\Mail\SendFeedbackMail;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\App;
@@ -21,6 +22,8 @@ return function (App $app) {
     });
 
     $app->post('/mail', SendMail::class);
+
+    $app->post('/feedback', SendFeedbackMail::class);
 
     $app->group('/users', function (Group $group) {
         $group->get('', ListUsersAction::class);
