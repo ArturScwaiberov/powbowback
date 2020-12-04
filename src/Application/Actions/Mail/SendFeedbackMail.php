@@ -18,7 +18,7 @@ use PHPMailer\PHPMailer\Exception;
 
 
 
-class SendMail extends Action
+class SendFeedbackMail extends Action
 {
     /**
      * @param LoggerInterface $logger
